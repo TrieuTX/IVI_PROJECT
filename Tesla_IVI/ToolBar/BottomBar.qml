@@ -44,8 +44,21 @@ Item {
         image_source: "qrc:/Icon/seat.svg"
     }
 
+    TempButton{
+        x: 735 * 0.7
+        y: 0
+        width: 150*0.7
+        height: 116* 0.7
+    }
 
 
+
+    TempButton{
+        x: 1035 * 0.7
+        y: 0
+        width: 150*0.7
+        height: 116* 0.7
+    }
 
 
 

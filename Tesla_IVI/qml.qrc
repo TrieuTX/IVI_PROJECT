@@ -55,5 +55,6 @@
         <file>Icon/wiper.svg</file>
         <file>ToolBar/BottomBar.qml</file>
         <file>ToolBar/ButtonBar.qml</file>
+        <file>ToolBar/TempButton.qml</file>
     </qresource>
 </RCC>
