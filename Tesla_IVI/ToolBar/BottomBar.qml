@@ -4,15 +4,16 @@ Item {
     id: root
     property int button_width: 48*0.7
     property int button_height: 48*0.7
+    property color color: "black"
     Rectangle{
         id: root1
         anchors.fill: root
-        color:"black"
+        color: root.color
     ButtonBar{
         x: 160*0.7
         y:35*0.7
         width: root.button_width
-        color: "black"
+        color: root.color
         height: root.button_height
         image_source: "qrc:/Icon/model3-icon.svg"
         onClicked: {
@@ -23,7 +24,7 @@ Item {
         x: 310*0.7
         y:35*0.7
         width: root.button_width
-        color: "black"
+        color: root.color
         height: root.button_height
         image_source: "qrc:/Icon/defrost.svg"
     }
@@ -31,7 +32,7 @@ Item {
         x: 460*0.7
         y:35*0.7
         width: root.button_width
-        color: "black"
+        color: root.color
         height: root.button_height
         image_source: "qrc:/Icon/heater.svg"
     }
@@ -39,7 +40,7 @@ Item {
         x: 610*0.7
         y:35*0.7
         width: root.button_width
-        color: "black"
+        color: root.color
         height: root.button_height
         image_source: "qrc:/Icon/seat.svg"
     }
@@ -47,8 +48,15 @@ Item {
     TempButton{
         x: 735 * 0.7
         y: 0
+        color: root.color
         width: 150*0.7
         height: 116* 0.7
+        onUpclicked: {
+
+        }
+        onDownclicked: {
+
+        }
     }
 
 
@@ -56,8 +64,15 @@ Item {
     TempButton{
         x: 1035 * 0.7
         y: 0
+        color: root.color
         width: 150*0.7
         height: 116* 0.7
+        onUpclicked: {
+
+        }
+        onDownclicked: {
+
+        }
     }
 
 
@@ -69,7 +84,7 @@ Item {
         x: 1262*0.7
         y: 35*0.7
         width: root.button_width
-        color: "black"
+        color: root.color
         height: root.button_height
         image_source: "qrc:/Icon/seat.svg"
     }
@@ -78,7 +93,7 @@ Item {
         x: 1410*0.7
         y:35*0.7
         width: root.button_width
-        color: "black"
+        color: root.color
         height: root.button_height
         image_source: "qrc:/Icon/music.svg"
     }
@@ -86,9 +101,28 @@ Item {
         x: 1560*0.7
         y:35*0.7
         width: root.button_width
-        color: "black"
+        color: root.color
         height: root.button_height
         image_source: "qrc:/Icon/phone.svg"
     }
+
+    VolumeButton{
+        id: volumeButton
+        x: 1710*0.7
+        y: 4*0.7
+        width: 50*0.7
+        height: 112*0.7
+        color: root.color
+        onUpclicked: {
+            console.log("Up")
+            volumeButton.volume++;
+        }
+        onDownclicked: {
+            console.log("Down")
+            volumeButton.volume--;
+        }
+    }
+
+
     }
 }

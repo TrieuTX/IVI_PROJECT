@@ -11,8 +11,15 @@ Rectangle{
         //source: root.image_source
         MouseArea{
             id: mousearea
+            hoverEnabled: true
             anchors.fill: image
             onClicked: root.clicked()
+            onEntered:{
+                image.opacity = 0.5
+            }
+            onExited: {
+                image.opacity = 1
+            }
         }
     }
 }

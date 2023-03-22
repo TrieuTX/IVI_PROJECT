@@ -8,7 +8,7 @@ Window {
     id: root
     width: 1920*0.7
     height: 1200*0.7
-    flags:Qt.Window | Qt.FramelessWindowHint
+    //flags:Qt.Window | Qt.FramelessWindowHint
     visible: true
     color:"white"
     BottomBar{

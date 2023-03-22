@@ -57,5 +57,7 @@
         <file>ToolBar/ButtonBar.qml</file>
         <file>ToolBar/TempButton.qml</file>
         <file>Map/MapLoad.qml</file>
+        <file>ToolBar/StateFanButton.qml</file>
+        <file>ToolBar/VolumeButton.qml</file>
     </qresource>
 </RCC>
