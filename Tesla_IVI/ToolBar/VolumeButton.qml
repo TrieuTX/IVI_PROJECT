@@ -4,8 +4,8 @@ Rectangle{
     id: root
     property int volume: 30
     property bool visibleVolumIcon: true
-    signal upclicked()
-    signal downclicked()
+    signal uppressed()
+    signal downpressed()
     Timer {
         id: timer
         interval: 2000
@@ -20,7 +20,7 @@ Rectangle{
         running:false
         onTriggered: {
             console.log("loop up")
-            root.upclicked()
+            root.uppressed()
             timer.restart()
         }
     }
@@ -31,11 +31,10 @@ Rectangle{
         running:false
         onTriggered: {
             console.log("loop down")
-            root.downclicked()
+            root.downpressed()
             timer.restart()
         }
     }
-
     Image {
         id: upVolume
         fillMode: Image.Stretch
@@ -50,7 +49,7 @@ Rectangle{
             hoverEnabled: true
             anchors.fill: upVolume
             onPressed: {
-                root.upclicked()
+                root.uppressed()
                 root.visibleVolumIcon = false
                 timer.restart()
             }
@@ -62,7 +61,6 @@ Rectangle{
                 timer2.stop()
                 //timer.stop()
             }
-
             onEntered:{
                 upVolume.opacity = 0.5
             }
@@ -84,7 +82,7 @@ Rectangle{
             hoverEnabled: true
             anchors.fill: downVolume
             onPressed: {
-                root.upclicked()
+                root.downpressed()
                 root.visibleVolumIcon = false
                 timer.restart()
             }
@@ -96,7 +94,6 @@ Rectangle{
                 timer3.stop()
                 //timer.stop()
             }
-
             onEntered:{
                 downVolume.opacity = 0.5
             }

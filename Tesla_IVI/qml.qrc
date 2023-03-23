@@ -56,8 +56,15 @@
         <file>ToolBar/BottomBar.qml</file>
         <file>ToolBar/ButtonBar.qml</file>
         <file>ToolBar/TempButton.qml</file>
-        <file>Map/MapLoad.qml</file>
+        <file>Map/MapView.qml</file>
         <file>ToolBar/StateFanButton.qml</file>
         <file>ToolBar/VolumeButton.qml</file>
+        <file>Map/RightBar.qml</file>
+        <file>Map/SearchBar.qml</file>
+        <file>Map/StatusBar.qml</file>
+        <file>Icon/gear.svg</file>
+        <file>Icon/direction.svg</file>
+        <file>Icon/Tesla Logo.svg</file>
+        <file>Map/MapLoad.qml</file>
     </qresource>
 </RCC>

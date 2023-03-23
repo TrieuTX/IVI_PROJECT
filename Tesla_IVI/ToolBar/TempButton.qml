@@ -4,8 +4,26 @@ import QtQuick 2.15
 Rectangle{
     id: root
     property int temp: 30
-    signal upclicked()
-    signal downclicked()
+    signal uppressed()
+    signal downpressed()
+    Timer{
+        id: timerUpPressed
+        interval: 40
+        repeat: true
+        running:false
+        onTriggered: {
+            root.uppressed()
+        }
+    }
+    Timer{
+        id: timerDownPressed
+        interval: 40
+        repeat: true
+        running:false
+        onTriggered: {
+            root.downpressed()
+        }
+    }
     Image {
         id: upTemp
         fillMode: Image.Stretch
@@ -17,7 +35,13 @@ Rectangle{
         MouseArea{
             hoverEnabled: true
             anchors.fill: upTemp
-            onClicked: root.upclicked()
+            onPressed: root.uppressed()
+            onPressAndHold: {
+                timerUpPressed.start()
+            }
+            onReleased: {
+                timerUpPressed.stop()
+            }
             onEntered:{
                 upTemp.opacity = 0.5
             }
@@ -26,7 +50,6 @@ Rectangle{
             }
         }
     }
-
     Image {
         id: downTemp
         fillMode: Image.Stretch
@@ -38,7 +61,15 @@ Rectangle{
         MouseArea{
             hoverEnabled: true
             anchors.fill: downTemp
-            onClicked: root.downclicked()
+            onPressed: {
+                root.downpressed()
+            }
+            onReleased: {
+                timerDownPressed.stop()
+            }
+            onPressAndHold: {
+                timerDownPressed.start()
+            }
             onEntered:{
                 downTemp.opacity = 0.5
             }
