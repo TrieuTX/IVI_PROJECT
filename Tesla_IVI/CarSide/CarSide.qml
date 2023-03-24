@@ -10,7 +10,9 @@ Item{
         currentIndex: 0
         anchors.fill: parent
 
-        CarSideOne{}
+        CarSideOne{
+            id: carSideOne
+        }
         Item {}
         Item {}
     }
@@ -22,7 +24,9 @@ Item{
     SupportBar{
         width: 580*0.7
         height: 50*0.7
-        y:800 *0.7
+        y:880 *0.7
+        onCameraIconPressed:{
+        }
     }
 
     PageIndicator {

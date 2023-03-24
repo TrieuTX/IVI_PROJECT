@@ -8,10 +8,18 @@ Item{
         N
     }
     property bool parkMode: true
-    property int percentBattery: 50
+    property int percentBattery: 100
     property int driveMode: CarSideOne.DriveMode.D
+    property bool autoDriving: true
     property int speed: 70
     property string mph: "MPH"
+
+    property alias doorLeftFront: carview.doorLeftFront
+    property alias doorRightFront: carview.doorRightFront
+    property alias doorLeftRear: carview.doorLeftRear
+    property alias doorRightRear: carview.doorRightRear
+    property alias openTrunkFront: carview.openTrunkFront
+
     Text{
         id: speed
         width: root.width
@@ -38,10 +46,18 @@ Item{
         verticalAlignment:  Text.AlignVCenter
         font.pixelSize: 20*0.7
     }
+    Rectangle{
+        anchors.verticalCenter: battery.verticalCenter
+        width: (58*0.7/100)*root.percentBattery
+        height: 19*0.7
+        x: 498*0.7
+        color: "green"
+    }
     Image {
         id: battery
         width: 62*0.7
         height: 20*0.7
+        z:1
         x: 498*0.7
         y: 170*0.7
         fillMode: Image.Stretch
@@ -107,6 +123,37 @@ Item{
             font.pixelSize: 20*0.7
             opacity:root.driveMode === CarSideOne.DriveMode.D ? 1 : 0.5
         }
+    }
+    Rectangle{
+        id: baseSpeedLine
+        height: 2
+        width: 540*0.7
+        y:205*0.7
+        color: "#FFFFFF"
+        anchors.horizontalCenter: root.horizontalCenter
+    }
+    Rectangle{
+        height: 6
+        radius: 3*0.7
+        width: ((270*0.7)/250)*root.speed
+        color: "#25CB55"
+        x: baseSpeedLine.width/2
+        anchors.verticalCenter: baseSpeedLine.verticalCenter
+    }
+    CarView{
+        id: carview
+        width: 580*0.7
+        height: 630*0.7
+        y: 207*0.7
+    }
+    DrivingBar{
+        id: drivingBar
+        autoDriving: root.autoDriving
+        driveMode: root.driveMode
+        width: 48*0.7
+        height: root.width
+        y: 227*0.7
+
     }
 
 
