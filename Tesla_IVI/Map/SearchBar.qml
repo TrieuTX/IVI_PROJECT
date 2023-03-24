@@ -2,8 +2,9 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 Item {
     id: root
+    property real opacityroot: 0.7
     property int radius: 0
-    property color color: "white"
+    property color color: "black"
     signal searchPressed()
     Rectangle{
         id: rectangle
@@ -11,6 +12,7 @@ Item {
         height: root.height
         radius: root.radius
         color: root.color
+        opacity: root.opacityroot
     }
     Image {
         width: 48*0.7
@@ -56,6 +58,7 @@ Item {
         background: Rectangle{
             anchors.fill: textInput
             color: root.color
+            opacity: 0
         }
 
         //property string placeholderText: "Navigate"

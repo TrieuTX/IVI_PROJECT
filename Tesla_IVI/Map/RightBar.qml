@@ -4,6 +4,7 @@ Item {
     id: root
     property color color: "black"
     property int compassAngle: 0
+    property real opacityroot: 0.7
 
     signal chargingStationPressed()
     signal settingPressed()
@@ -16,6 +17,7 @@ Item {
         height: 80*0.7
         radius: 40*0.7
         color: root.color
+        opacity: root.opacityroot
 //        Rectangle{
 //            width: 50*0.7
 //            height: 50*0.7
@@ -56,6 +58,7 @@ Item {
         height: 175*0.7
         radius: 40*0.7
         color: root.color
+        opacity: root.opacityroot
         Image {
             id: imageZoomIn
             source: "qrc:/Icon/plus.svg"
@@ -109,6 +112,7 @@ Item {
         height: 80*0.7
         radius: 40*0.7
         color: root.color
+        opacity: root.opacityroot
         Rectangle{
             id: rectangeChargingStation
             width: 50*0.7
@@ -116,6 +120,7 @@ Item {
             radius: 25*0.7
             color: "grey"
             anchors.centerIn: parent
+            opacity: root.opacityroot
             Image {
                 id: chargeStation
                 source: "qrc:/Icon/power.svg"
@@ -148,6 +153,7 @@ Item {
         height: 80*0.7
         radius: 40*0.7
         color: root.color
+        opacity: root.opacityroot
         Image {
             id: image
             width: 40*0.7

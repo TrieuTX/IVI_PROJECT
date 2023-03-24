@@ -66,5 +66,9 @@
         <file>Icon/direction.svg</file>
         <file>Icon/Tesla Logo.svg</file>
         <file>Map/MapLoad.qml</file>
+        <file>CarSide/TopStatusBar.qml</file>
+        <file>CarSide/CarSideOne.qml</file>
+        <file>CarSide/CarSide.qml</file>
+        <file>CarSide/SupportBar.qml</file>
     </qresource>
 </RCC>

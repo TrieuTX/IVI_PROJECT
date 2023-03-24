@@ -4,6 +4,7 @@ import QtLocation 5.15
 import QtPositioning 5.15
 import "ToolBar"
 import "Map"
+import "CarSide"
 Window {
     id: root
     width: 1920*0.7
@@ -21,4 +22,9 @@ Window {
         width: 1340*0.7
         height: 1080*0.7
     }
+    CarSide{
+        width: 580*0.7
+        height: 1080*0.7
+    }
+
 }
