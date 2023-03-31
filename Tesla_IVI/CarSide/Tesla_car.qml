@@ -848,7 +848,7 @@ Node {
                     source: "meshes/door_rf.mesh"
                     eulerRotation.z: rootNode.doorRightFront ? -doorOpenAngle : 0
                     Behavior on eulerRotation.z {
-                        NumberAnimation { duration: 1000 }
+                        NumberAnimation { duration: rootNode.duration }
                     }
                     materials: [
                         jUST_BLACK_0_material,
@@ -887,7 +887,7 @@ Node {
                     source: "meshes/door_rr.mesh"
                     eulerRotation.z: rootNode.doorRightRear ? -doorOpenAngle : 0
                     Behavior on eulerRotation.z {
-                        NumberAnimation { duration: 1000 }
+                        NumberAnimation { duration: rootNode.duration }
                     }
                     materials: [
                         jUST_BLACK_0_material,
@@ -1043,28 +1043,26 @@ Node {
                 id: bonnet_dummy
                 y: 1.32639
                 z: 0.237391
-
                 Model {
                     id: bonnet_ok
                     source: "meshes/bonnet_ok.mesh"
+                    pickable: true
                     eulerRotation.x: rootNode.openTrunkFront ? openTruckAngle : 0
                     Behavior on eulerRotation.x {
-                        NumberAnimation { duration: 1000 }
+                        NumberAnimation { duration: rootNode.duration }
                     }
                     materials: [
                         primary_material
                     ]
-
                     Model {
                         id: chrome_bonnet_ok
                         source: "meshes/chrome_bonnet_ok.mesh"
+                        pickable: true
                         materials: [
                             movsteer_1_0_1_material
                         ]
                     }
                 }
-
-
             }
         }
 

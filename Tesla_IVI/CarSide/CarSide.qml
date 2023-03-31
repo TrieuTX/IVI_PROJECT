@@ -1,5 +1,6 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
+import QtQuick.Timeline 1.0
 Item{
 
     Rectangle{
@@ -26,6 +27,7 @@ Item{
         height: 50*0.7
         y:880 *0.7
         onCameraIconPressed:{
+
         }
     }
 

@@ -1,4 +1,5 @@
 import QtQuick 2.15
+import QtQuick.Timeline 1.0
 Item{
     id: root
     enum DriveMode{
@@ -9,7 +10,7 @@ Item{
     }
     property bool parkMode: true
     property int percentBattery: 100
-    property int driveMode: CarSideOne.DriveMode.D
+    property int driveMode: CarSideOne.DriveMode.P
     property bool autoDriving: true
     property int speed: 70
     property string mph: "MPH"
@@ -146,6 +147,8 @@ Item{
         height: 630*0.7
         y: 207*0.7
     }
+
+
     DrivingBar{
         id: drivingBar
         autoDriving: root.autoDriving
